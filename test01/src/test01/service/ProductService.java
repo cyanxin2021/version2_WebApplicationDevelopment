@@ -141,7 +141,7 @@ public class ProductService {
 		}
 	}
 	
-	// 分页操作
+	// 猜你喜欢分页操作
 	public PageBean findHotProductByPage(int currentPage, int currentCount,
 			String category) {
 		PageBean bean = new PageBean();
@@ -157,7 +157,7 @@ public class ProductService {
 					category);
 			bean.setPs(ps);
 			// 获取总条数
-			int totalCount = 5;
+			int totalCount = ps.size()>5 ? 5 : ps.size();
 			bean.setTotalCount(totalCount);
 			System.out.println("总条数："+totalCount);
 			// 获取总页数
