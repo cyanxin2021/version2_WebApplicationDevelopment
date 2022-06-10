@@ -29,7 +29,7 @@ public class ChangeOrderStateServlet extends HttpServlet {
 			try {
 				service.updateState(orderid);
 				request.setAttribute("paySuccess", paySuccess);
-				request.getRequestDispatcher("/findOrderByUser").forward(request, response);
+				request.getRequestDispatcher("client/paysuccess.jsp").forward(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 				response.getWriter().write("修改订单状态失败");
