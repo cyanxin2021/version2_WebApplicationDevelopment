@@ -32,17 +32,18 @@ public class ShowHotProductByPageServlet extends HttpServlet {
 		}
 		// 3.获取查找的分类
 		String category = "全部商品";
-//		String _category = request.getParameter("category");
-//		
-//		if (_category != null) {
-//			_category = new String(request.getParameter("category").getBytes("iso-8859-1"), "utf-8");
-//			System.out.println(_category);
-//			category = _category;
-//		}
+		String _category = request.getParameter("category");
+		
+		if (_category != null) {
+			_category = new String(request.getParameter("category").getBytes("iso-8859-1"), "utf-8");
+			System.out.println(_category);
+			category = _category;
+		}
 		// 4.调用service，完成获取当前页分页Bean数据.
 		ProductService service = new ProductService();
 		PageBean bean = service.findHotProductByPage(currentPage, currentCount,
 				category);
+		System.out.println(bean.getPs());
 		// 将数据存储到request范围，跳转到product_list.jsp页面展示
 		request.setAttribute("bean", bean);
 		request.getRequestDispatcher("/client/hotproduct_list.jsp").forward(request, response);
