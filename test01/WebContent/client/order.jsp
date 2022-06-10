@@ -97,7 +97,8 @@
 												</p>
 												<hr />
 												<p style="text-align:right">
-													<input value="提&nbsp;交&nbsp;订&nbsp;单&nbsp;>>" class="btn" type="submit" onclick="checkOnSubmit();" />
+													<input value="提&nbsp;交&nbsp;订&nbsp;单&nbsp;>>" class="btn" type="submit" onclick="return checkOnSubmit();" />
+<!-- 													<input value="提&nbsp;交&nbsp;订&nbsp;单&nbsp;>>" class="btn" type="submit" onclick="alert('hello');" /> -->
 												</p>
 											</td>
 										</tr>

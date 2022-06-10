@@ -15,7 +15,7 @@ function checkOnSubmit() {			// 验证整个表单
 	if(receiverAddress && receiverName && receiverPhone){
 		document.getElementById("orderForm").submit();
 	}else{
-	   return "";
+	   return false;
 	}
 }
 
