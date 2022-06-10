@@ -329,4 +329,24 @@
     <servlet-name>FindSalesmanOrderByManyConditionServlet</servlet-name>
     <url-pattern>/findSalesmanOrderByManyCondition</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddSalesmanServlet</display-name>
+    <servlet-name>AddSalesmanServlet</servlet-name>
+    <servlet-class>test01.web.servlet.manager.AddSalesmanServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddSalesmanServlet</servlet-name>
+    <url-pattern>/addSalesman</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ShowHotProductByPageServlet</display-name>
+    <servlet-name>ShowHotProductByPageServlet</servlet-name>
+    <servlet-class>test01.web.servlet.client.ShowHotProductByPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowHotProductByPageServlet</servlet-name>
+    <url-pattern>/showHotProductByPage</url-pattern>
+  </servlet-mapping>
 </web-app>
