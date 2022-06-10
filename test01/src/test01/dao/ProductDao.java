@@ -69,6 +69,24 @@ public class ProductDao {
 				obj);
 	}
 
+	//前台，获取热销商品
+	public List<Product> getHotProduct(int currentPage, int currentCount,
+			String category) throws SQLException {
+		// 参数
+		Object[] obj = new Object[] { (currentPage - 1) * currentCount, currentCount };
+		String sql = "SELECT products.* "+
+	                   " FROM orderitem,orders,products "+
+	                   " WHERE orderitem.order_id = orders.id "+
+	                           " AND products.id = orderitem.product_id "+
+	                           " AND orders.paystate=1 "+
+	                           " AND orders.ordertime > DATE_SUB(NOW(), INTERVAL 100 DAY) "+
+	                   " GROUP BY products.id,products.name,products.imgurl "+
+	                   " ORDER BY SUM(orderitem.buynum) DESC "+
+	                   " limit ?,?";
+		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
+		return runner.query(sql, new BeanListHandler<Product>(Product.class), obj);
+	}
+	
 	// 根据id查找商品
 	public Product findProductById(String id) throws SQLException {
 		String sql = "select * from products where id=?";
@@ -218,4 +236,5 @@ public class ProductDao {
 		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
 		runner.update(sql, id);
 	}
+	
 }

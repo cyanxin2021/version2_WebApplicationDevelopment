@@ -118,10 +118,21 @@ public class UserDao {
 		runner.update(sql, obj.toArray());
 	}
 
-
+	// 删除销售人员信息
 	public void deleteSalesman(String id) throws SQLException {
 		String sql = "DELETE FROM salesman WHERE id = ?";
 		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
 		runner.update(sql, id);
+	}
+
+	// 添加销售人员
+	public void addSalesman(SalesUser suser) throws SQLException {
+		// TODO Auto-generated method stub
+		String sql = "insert into salesman(username,password,email,telephone,category) values(?,?,?,?,?)";
+		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
+		int row = runner.update(sql, suser.getUsername(), suser.getPassword(), suser.getEmail(), suser.getTelephone(), suser.getCategory());
+		if (row == 0) {
+			throw new RuntimeException();
+		}
 	}
 }

@@ -85,7 +85,7 @@ public class UserService {
 		return ss;
 	}
 	
-	// 修改商品信息
+	// 修改销售人员信息
 	public void editSalesman(SalesUser suser) {
 		try {
 			dao.editSalesman(suser);
@@ -100,6 +100,16 @@ public class UserService {
 			dao.deleteSalesman(id);
 		} catch (SQLException e) {
 			throw new RuntimeException("后台系统根据id删除销售人员信息失败！");
+		}
+	}
+	
+	//添加销售人员
+	public void addSalesman(SalesUser suser) {
+		try {
+			dao.addSalesman(suser);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }

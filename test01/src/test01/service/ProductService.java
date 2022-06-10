@@ -140,4 +140,33 @@ public class ProductService {
 			throw new RuntimeException("后台系统根据id删除商品信息失败！");
 		}
 	}
+	
+	// 分页操作
+	public PageBean findHotProductByPage(int currentPage, int currentCount,
+			String category) {
+		PageBean bean = new PageBean();
+		// 封装每页显示数据条数
+		bean.setCurrentCount(currentCount);
+		// 封装当前页码
+		bean.setCurrentPage(currentPage);
+		// 封装当前查找类别
+		bean.setCategory(category);
+		try {
+			// 获取当前页数据
+			List<Product> ps = dao.getHotProduct(currentPage, currentCount,
+					category);
+			bean.setPs(ps);
+			// 获取总条数
+			int totalCount = 5;
+			bean.setTotalCount(totalCount);
+			System.out.println("总条数："+totalCount);
+			// 获取总页数
+			int totalPage = (int) Math.ceil(totalCount * 1.0 / currentCount);
+			bean.setTotalPage(totalPage);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return bean;
+	}
 }
