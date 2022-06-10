@@ -6,13 +6,13 @@
 	<meta http-equiv="Content-Language" content="zh-cn">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<script type="text/javascript">
-	    //添加商品
-		function addProduct() {
-			window.location.href = "${pageContext.request.contextPath}/admin/add.jsp";
+	    //添加销售人员
+		function addSalesman() {
+			window.location.href = "${pageContext.request.contextPath}/admin/addSalesman.jsp";
 		}
-		//删除商品
-		function p_del() {   
-			var msg = "您确定要删除该商品吗？";   
+		//删除销售人员
+		function s_del() {   
+			var msg = "您确定要删除该销售人员吗？";   
 			if (confirm(msg)==true){   
 			return true;   
 			}else{   
@@ -96,7 +96,7 @@
 				</tr>
 				<tr>
 					<td class="ta_01" align="right" bgColor="#fdfcf8">
-						<button type="button" id="add" name="add" value="&#28155;&#21152;" class="button_add" onclick="addProduct()">
+						<button type="button" id="add" name="add" value="&#28155;&#21152;" class="button_add" onclick="addSalesman()">
 							&#28155;&#21152;
 						</button>
 					</td>
@@ -132,7 +132,7 @@
 										</a>
 									</td>
 									<td align="center" style="HEIGHT: 22px" width="7%">
-										<a href="${pageContext.request.contextPath}/deleteSalesman?id=${s.id}" onclick="javascript:return p_del()">
+										<a href="${pageContext.request.contextPath}/deleteSalesman?id=${s.id}" onclick="javascript:return s_del()">
 												<font style="CURSOR: hand">删除</font>
 										</a>
 									</td>

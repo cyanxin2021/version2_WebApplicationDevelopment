@@ -3,6 +3,7 @@
 <HEAD>
 	<meta http-equiv="Content-Language" content="zh-cn">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>添加销售人员</title>
 	<LINK href="${pageContext.request.contextPath}/admin/css/Style.css" type="text/css" rel="stylesheet">
 	<style type="text/css">
 		strong {
@@ -16,30 +17,36 @@
 </HEAD>
 <body>
 	<form id="userAction_save_do" name="Form1"
-		action="${pageContext.request.contextPath}/addProduct" method="post"
-		enctype="multipart/form-data">
+		action="${pageContext.request.contextPath}/addSalesman" method="post">
+<!-- 		enctype="multipart/form-data"> -->
 		&nbsp;
 		<table cellSpacing="1" cellPadding="5" width="100%" align="center"
 			bgColor="#eeeeee" style="border: 1px solid #8ba7e3" border="0">
 			<tr>
 				<td class="ta_01" align="center" bgColor="#483D8B" colSpan="4"
-					height="26"><strong>添加商品</strong>
+					height="26"><strong>添加销售人员</strong>
 				</td>
 			</tr>
 			<tr>
-				<td align="center" bgColor="#f5fafe" class="ta_01">商品名称：</td>
-				<td class="ta_01" bgColor="#ffffff"><input type="text" name="name" class="bg" /></td>
-				<td align="center" bgColor="#f5fafe" class="ta_01">商品价格：</td>
+				<td align="center" bgColor="#f5fafe" class="ta_01">销售人员名称：</td>
+				<td class="ta_01" bgColor="#ffffff"><input type="text" name="username" class="bg" /></td>
+				<td align="center" bgColor="#f5fafe" class="ta_01">登录口令：</td>
 				<td class="ta_01" bgColor="#ffffff">
-					<input type="text" name="price" class="bg" />
+					<input type="text" name="password" class="bg" />
 				</td>
 			</tr>
 			<tr>
-				<td align="center" bgColor="#f5fafe" class="ta_01">商品数量：</td>
+				<td align="center" bgColor="#f5fafe" class="ta_01">电子邮箱：</td>
 				<td class="ta_01" bgColor="#ffffff">
-					<input type="text" name="pnum" class="bg" />
+					<input type="text" name="email" class="bg" />
 				</td>
-				<td align="center" bgColor="#f5fafe" class="ta_01">商品类别：</td>
+				<td align="center" bgColor="#f5fafe" class="ta_01">联系电话：</td>
+				<td class="ta_01" bgColor="#ffffff">
+					<input type="text" name="telephone" class="bg" />
+				</td>
+			</tr>
+			<tr>
+				<td align="center" bgColor="#f5fafe" class="ta_01">管理商品类别：</td>
 				<td class="ta_01" bgColor="#ffffff">
 					<select name="category" id="category">
 						<option value="" selected="selected">--选择商品类加--</option>
@@ -51,19 +58,8 @@
 						<option value="百货">百货</option>
 				</select>
 				</td>
+<!-- 				<td class="ta_01" bgColor="#ffffff"><td class="ta_01" bgColor="#ffffff"> -->
 			</tr>
-			<tr>
-				<td align="center" bgColor="#f5fafe" class="ta_01">商品图片：</td>
-				<td class="ta_01" bgColor="#ffffff" colspan="3">
-				<input type="file" name="upload" size="30" value="" />
-				</td>
-			</tr>
-			<TR>
-				<TD class="ta_01" align="center" bgColor="#f5fafe">商品描述：</TD>
-				<TD class="ta_01" bgColor="#ffffff" colSpan="3">
-					<textarea name="description" cols="30" rows="3" style="WIDTH: 96%"></textarea>
-				</TD>
-			</TR>
 			<tr>
 				<td class="ta_01" style="WIDTH: 100%" align="center"
 					bgColor="#f5fafe" colSpan="4">

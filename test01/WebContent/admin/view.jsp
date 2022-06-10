@@ -54,24 +54,24 @@
 					<tr style="FONT-WEIGHT: bold; FONT-SIZE: 12pt; HEIGHT: 25px; BACKGROUND-COLOR: #483D8B; color: #fff">
 						<td align="center" width="7%">序号</td>
 						<td width="8%" align="center">商品</td>
-						<td align="center" width="18%">商品编号</td>
+						<td align="center" width="14%">商品编号</td>
 						<td align="center" width="10%">商品名称</td>
 						<td align="center" width="10%">商品价格</td>
-						<td width="7%" align="center">购买数量</td>
-						<td width="7%" align="center">商品类别</td>
-						<td width="31%" align="center">商品描述</td>
+						<td width="8%" align="center">购买数量</td>
+						<td width="8%" align="center">商品类别</td>
+						<td width="25%" align="center">商品描述</td>
 					</tr>
 					<c:forEach items="${order.orderItems}" var="item" varStatus="vs">
 						<tr style="FONT-WEIGHT: bold; FONT-SIZE: 12pt; HEIGHT: 25px; BACKGROUND-COLOR: #eeeeee">
-							<td align="center" width="7%">${vs.count }</td>
+							<td align="center" width="5%">${vs.count }</td>
 							<td width="8%" align="center">
 								<img src="${pageContext.request.contextPath}${item.p.imgurl}" width="50" height="50">
 							</td>
-							<td align="center" width="18%">${item.p.id }</td>
+							<td align="center" width="14%">${item.p.id }</td>
 							<td align="center" width="10%">${item.p.name }</td>
 							<td align="center" width="10%">${item.p.price }</td>
-							<td width="7%" align="center">${item.buynum }</td>
-							<td width="7%" align="center">${item.p.category }</td>
+							<td width="10%" align="center">${item.buynum }</td>
+							<td width="10%" align="center">${item.p.category }</td>
 							<td width="31%" align="center">${item.p.description}</td>
 						</tr>
 					</c:forEach>
