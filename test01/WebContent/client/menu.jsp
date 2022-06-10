@@ -26,7 +26,7 @@ a href {
 			<hr/>
 			<li style="list-style-type:none;"><a href="${pageContext.request.contextPath}/showProductByPage" class="menu_list">全部商品</a></li>
 			<hr/>
-			<li style="list-style-type:none;"><a href="${pageContext.request.contextPath}/showProductByPage" class="menu_list">猜你喜欢</a></li>
+			<li style="list-style-type:none;"><a href="${pageContext.request.contextPath}/showHotProductByPage" class="menu_list">猜你喜欢</a></li>
 		</ul>
 				
 </div>
