@@ -83,7 +83,7 @@ public class EditSalesmanServlet extends HttpServlet {
 			
 			
 			String category = request.getParameter("category"); // 管理商品类别
-			if(telephone != null && telephone.trim().length() > 0) {
+			if(category != null && category.trim().length() > 0) {
 				System.out.println(category);
 				suser.setCategory(category);
 			}
