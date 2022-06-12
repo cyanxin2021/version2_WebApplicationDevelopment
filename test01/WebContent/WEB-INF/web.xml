@@ -349,4 +349,14 @@
     <servlet-name>ShowHotProductByPageServlet</servlet-name>
     <url-pattern>/showHotProductByPage</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListLoginDataServlet</display-name>
+    <servlet-name>ListLoginDataServlet</servlet-name>
+    <servlet-class>test01.web.servlet.manager.ListLoginDataServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListLoginDataServlet</servlet-name>
+    <url-pattern>/listLoginData</url-pattern>
+  </servlet-mapping>
 </web-app>
