@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.security.auth.login.LoginException;
 import test01.dao.UserDao;
+import test01.domain.LoginData;
 import test01.domain.Product;
 import test01.domain.SalesUser;
 import test01.domain.User;
@@ -111,5 +112,16 @@ public class UserService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	//查找所有登录数据
+	public List<LoginData> listAllData() {
+		try {
+			return dao.listAllData();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
