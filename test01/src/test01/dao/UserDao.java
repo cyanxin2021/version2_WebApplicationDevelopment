@@ -8,6 +8,7 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
+import test01.domain.LoginData;
 import test01.domain.Product;
 import test01.domain.SalesUser;
 import test01.domain.User;
@@ -135,4 +136,11 @@ public class UserDao {
 			throw new RuntimeException();
 		}
 	}
+	
+	// 查找所有登录数据
+	public List<LoginData> listAllData() throws SQLException {
+		String sql = "select * from logindata";
+		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
+		return runner.query(sql, new BeanListHandler<LoginData>(LoginData.class));
+	}	
 }
